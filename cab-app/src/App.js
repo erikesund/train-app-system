@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'
 import Stops from './components/stops';
+import DriverLogin from './components/DriverLogin/DriverLogin';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Stops stops={locationArray}/>
+      <DriverLogin/>
     </div>
   );}
   
