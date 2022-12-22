@@ -1,6 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react'
-import Stops from './components/stops';
+import React from 'react'
 import DriverLogin from './components/DriverLogin/DriverLogin';
 import DriverContainer from './containers/DriverContainer';
 

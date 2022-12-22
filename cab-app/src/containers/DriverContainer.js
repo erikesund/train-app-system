@@ -4,13 +4,13 @@ import DriverOptions from '../components/Driver/DriverOptions';
 function DriverContainer () {
 
   const [newData, setNewData] = useState([]);
-  const [locationArray, setLocationArray] = useState([]);
+  const [serviceArray, setServiceArray] = useState([]);
 
   const getData = async () => {
     const response = await fetch("./test.json")
     const data = await response.json()
     setNewData(data)
-    setLocationArray(data.JsonScheduleV1.schedule_segment.schedule_location)
+    setServiceArray(data.JsonScheduleV1.schedule_segment.schedule_location)
   }
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function DriverContainer () {
   return (
     <div>
       <p>This is the DriverContainer</p>
-      <DriverOptions/>
+      <DriverOptions service={serviceArray}/>
     </div>
   )
 }
