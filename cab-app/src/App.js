@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from 'react'
+import Stops from './components/stops';
 
 function App() {
 
@@ -18,16 +19,11 @@ function App() {
   }, [])
 
 
-  if (locationArray.arrival === undefined) {
-    return (
-      <p>Hello</p>
-    )
-  } else 
-{  return (
+  return (
     <div className="App">
-      <p>{locationArray[0].arrival}</p>
+      <Stops stops={locationArray}/>
     </div>
   );}
-  }
+  
 
 export default App;
