@@ -10,29 +10,24 @@ function App() {
     const response = await fetch("./test.json")
     const data = await response.json()
     setNewData(data)
-  }
-
-  try {
-    getData()
-      } catch (error) {
-        console.error(error)
+    setLocationArray(data.JsonScheduleV1.schedule_segment.schedule_location)
   }
 
   useEffect(() => {
     getData();
   }, [])
 
-  if (newData === []){
-    return null;
-  } else {
+
+  if (locationArray.arrival === undefined) {
     return (
-      <div className="App">
-
-      </div>
-    );
+      <p>Hello</p>
+    )
+  } else 
+{  return (
+    <div className="App">
+      <p>{locationArray[0].arrival}</p>
+    </div>
+  );}
   }
-
-  
-}
 
 export default App;
