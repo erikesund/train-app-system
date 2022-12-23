@@ -18,6 +18,10 @@ function DriverContainer () {
     getData();
   }, [])
 
+  const viewModeClick = string => {
+    setViewMode(string);
+  };
+
   return (
     <div>
       <p>This is the DriverContainer</p>
