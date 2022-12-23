@@ -5,6 +5,7 @@ function DriverContainer () {
 
   const [newData, setNewData] = useState([]);
   const [serviceArray, setServiceArray] = useState([]);
+  const [viewMode, setViewMode] = useState("")
 
   const getData = async () => {
     const response = await fetch("./test.json")
