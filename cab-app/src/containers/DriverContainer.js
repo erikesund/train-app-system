@@ -5,7 +5,7 @@ function DriverContainer () {
 
   const [newData, setNewData] = useState([]);
   const [serviceArray, setServiceArray] = useState([]);
-  const [viewMode, setViewMode] = useState("")
+  const [viewMode, setViewMode] = useState("options")
 
   const getData = async () => {
     const response = await fetch("./test.json")
@@ -25,7 +25,7 @@ function DriverContainer () {
   return (
     <div>
       <p>This is the DriverContainer</p>
-      <DriverOptions service={serviceArray}/>
+      <DriverOptions service={serviceArray} viewModeClick={viewModeClick} viewMode={viewMode}/>
     </div>
   )
 }
