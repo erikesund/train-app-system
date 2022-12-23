@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import DriverOptions from '../components/Driver/DriverOptions';
+import Rota from '../components/Driver/DriverRotas/Rota';
+import DriverLogin from '../components/DriverLogin/DriverLogin';
 
 function DriverContainer () {
 
   const [newData, setNewData] = useState([]);
   const [serviceArray, setServiceArray] = useState([]);
-  const [viewMode, setViewMode] = useState("options")
+  const [viewMode, setViewMode] = useState("login")
 
   const getData = async () => {
     const response = await fetch("./test.json")
@@ -25,7 +27,15 @@ function DriverContainer () {
   return (
     <div>
       <p>This is the DriverContainer</p>
-      <DriverOptions service={serviceArray} viewModeClick={viewModeClick} viewMode={viewMode}/>
+      {viewMode === "login" && (
+        <DriverLogin viewModeClick={viewModeClick}/>
+      )}
+      {viewMode === "options" && (
+        <DriverOptions service={serviceArray} viewModeClick={viewModeClick} viewMode={viewMode}/>
+      )}
+      {viewMode === "rota" && (
+        <Rota service={serviceArray}/>
+      )}
     </div>
   )
 }
