@@ -1,5 +1,4 @@
 import React from "react";
-import DriverContainer from "../../../containers/DriverContainer";
 
 function DriverDetails ({driver}) {
 
