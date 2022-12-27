@@ -1,5 +1,4 @@
 import React from "react";
-import Rota from "./DriverRotas/Rota"
 
 
 function DriverOptions ({service, viewModeClick, viewMode}) {
@@ -14,7 +13,7 @@ function DriverOptions ({service, viewModeClick, viewMode}) {
     viewModeClick("annual-leave");
   };
   function handleDriverClick(evt) {
-    viewModeClick("driver-info");
+    viewModeClick("driver-details");
   };
 
   return (
