@@ -38,7 +38,7 @@ function DriverContainer () {
         <Rota service={serviceArray}/>
       )}
       {viewMode === "driver-details" && (
-        <DriverDetails driverData={driverData}/>
+        <DriverDetails driver={driverData}/>
       )}
     </div>
   )

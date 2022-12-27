@@ -1,9 +1,13 @@
 import React from "react";
+import DriverContainer from "../../../containers/DriverContainer";
 
-function DriverDetails ({driverData}) {
+function DriverDetails ({driver}) {
 
   return (
-    <div>This is the DriverDetails component.</div>
+    <div>
+      <p>Name: {driver.firstName} {driver.lastName}</p>
+      <p>Company: {driver.tocName}</p>
+    </div>
   )
 }
 
