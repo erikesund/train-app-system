@@ -6,15 +6,15 @@ import DriverLogin from '../components/DriverLogin/DriverLogin';
 
 function DriverContainer () {
 
-  const [newData, setNewData] = useState([]);
+  const [driverData, setDriverData] = useState([]);
   const [serviceArray, setServiceArray] = useState([]);
   const [viewMode, setViewMode] = useState("login")
 
   const getData = async () => {
     const response = await fetch("./driver.json")
     const data = await response.json()
-    setNewData(data)
-    setServiceArray(data.JsonScheduleV1.schedule_segment.schedule_location)
+    setDriverData(data)
+    setServiceArray(data.shifts[0].JsonScheduleV1.schedule_segment.schedule_location)
   }
 
   useEffect(() => {
@@ -38,7 +38,7 @@ function DriverContainer () {
         <Rota service={serviceArray}/>
       )}
       {viewMode === "driver-details" && (
-        <DriverDetails/>
+        <DriverDetails driverData={driverData}/>
       )}
     </div>
   )
