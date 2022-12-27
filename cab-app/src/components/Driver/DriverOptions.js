@@ -1,5 +1,4 @@
 import React from "react";
-import Rota from "./DriverRotas/Rota"
 
 
 function DriverOptions ({service, viewModeClick, viewMode}) {

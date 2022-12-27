@@ -1,6 +1,6 @@
 import React from "react";
 
-function DriverDetails () {
+function DriverDetails ({driverData}) {
 
   return (
     <div>This is the DriverDetails component.</div>
