@@ -11,7 +11,7 @@ function DriverContainer () {
   const [viewMode, setViewMode] = useState("login")
 
   const getData = async () => {
-    const response = await fetch("./test.json")
+    const response = await fetch("./driver.json")
     const data = await response.json()
     setNewData(data)
     setServiceArray(data.JsonScheduleV1.schedule_segment.schedule_location)
