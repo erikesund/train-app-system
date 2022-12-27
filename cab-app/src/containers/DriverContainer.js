@@ -25,9 +25,14 @@ function DriverContainer () {
     setViewMode(string);
   };
 
+  function handleOptionsClick(evt) {
+    viewModeClick("options");
+  };
+
   return (
     <div>
       <p>This is the DriverContainer</p>
+      <button onClick={handleOptionsClick}>Options</button>
       {viewMode === "login" && (
         <DriverLogin viewModeClick={viewModeClick}/>
       )}
