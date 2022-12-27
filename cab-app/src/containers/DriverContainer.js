@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DriverOptions from '../components/Driver/DriverOptions';
+import DriverDetails from '../components/Driver/DriverDetails/DriverDetails';
 import Rota from '../components/Driver/DriverRotas/Rota';
 import DriverLogin from '../components/DriverLogin/DriverLogin';
 
@@ -35,6 +36,9 @@ function DriverContainer () {
       )}
       {viewMode === "rota" && (
         <Rota service={serviceArray}/>
+      )}
+      {viewMode === "driver-details" && (
+        <DriverDetails/>
       )}
     </div>
   )

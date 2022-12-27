@@ -14,7 +14,7 @@ function DriverOptions ({service, viewModeClick, viewMode}) {
     viewModeClick("annual-leave");
   };
   function handleDriverClick(evt) {
-    viewModeClick("driver-info");
+    viewModeClick("driver-details");
   };
 
   return (
