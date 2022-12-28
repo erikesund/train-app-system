@@ -14,7 +14,7 @@ function DriverContainer () {
     const response = await fetch("./driver.json")
     const data = await response.json()
     setDriverData(data)
-    setServiceArray(data.shifts[0].JsonScheduleV1.schedule_segment.schedule_location)
+    setServiceArray(data.shifts)
   }
 
   useEffect(() => {
