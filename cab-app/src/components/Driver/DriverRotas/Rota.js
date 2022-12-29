@@ -9,6 +9,7 @@ function Rota ({shifts}) {
 
   return (
     <div>
+      Upcoming Shifts
       {shiftNodes}
     </div>
   )
