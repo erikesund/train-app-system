@@ -7,14 +7,14 @@ import DriverLogin from '../components/DriverLogin/DriverLogin';
 function DriverContainer () {
 
   const [driverData, setDriverData] = useState([]);
-  const [serviceArray, setServiceArray] = useState([]);
+  const [shiftArray, setShiftArray] = useState([]);
   const [viewMode, setViewMode] = useState("login")
 
   const getData = async () => {
     const response = await fetch("./driver.json")
     const data = await response.json()
     setDriverData(data)
-    setServiceArray(data.shifts)
+    setShiftArray(data.shifts)
   }
 
   useEffect(() => {
@@ -37,10 +37,10 @@ function DriverContainer () {
         <DriverLogin viewModeClick={viewModeClick}/>
       )}
       {viewMode === "options" && (
-        <DriverOptions service={serviceArray} viewModeClick={viewModeClick} viewMode={viewMode}/>
+        <DriverOptions shifts={shiftArray} viewModeClick={viewModeClick} viewMode={viewMode}/>
       )}
       {viewMode === "rota" && (
-        <Rota service={serviceArray}/>
+        <Rota shifts={shiftArray}/>
       )}
       {viewMode === "driver-details" && (
         <DriverDetails driver={driverData}/>

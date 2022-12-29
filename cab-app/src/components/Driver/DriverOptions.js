@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function DriverOptions ({service, viewModeClick, viewMode}) {
+function DriverOptions ({shifts, viewModeClick, viewMode}) {
 
   function handleRotaClick(evt) {
     viewModeClick("rota");
