@@ -1,11 +1,10 @@
 import React from "react";
 import Service from "./Service";
 
-function Shift ({service}) {
+function Shift ({shift}) {
   return (
     <div>
-      <p>This is a shift component.</p>
-      <Service service={service}/>
+      Date: {shift.date} Time: {shift.startTime} From: {shift.startLocation}
     </div>
   )
 }

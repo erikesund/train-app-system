@@ -1,11 +1,15 @@
 import React from "react";
 import Shift from "./Shift";
 
-function Rota ({service}) {
+function Rota ({shifts}) {
+
+  const shiftNodes = shifts.map((shift) => {
+    return <Shift shift={shift}/>
+  })
+
   return (
     <div>
-      <p>This is a Rota component</p>
-      <Shift service={service}/>
+      {shiftNodes}
     </div>
   )
 }
