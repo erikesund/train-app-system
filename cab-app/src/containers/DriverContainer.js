@@ -12,6 +12,7 @@ function DriverContainer () {
   const [shiftArray, setShiftArray] = useState([]);
   const [viewMode, setViewMode] = useState("login")
   const [selectedShift, setSelectedShift] = useState(null)
+  const [selectedService, setSelectedService] = useState(null)
 
   const getData = async () => {
     const response = await fetch("./driver.json")
@@ -49,7 +50,7 @@ function DriverContainer () {
         <DriverDetails driver={driverData}/>
       )}
       {viewMode === "shift" && (
-        <Shift selectedShift={selectedShift}/>
+        <Shift selectedShift={selectedShift} viewModeClick={viewModeClick}/>
       )}
     </div>
   )
