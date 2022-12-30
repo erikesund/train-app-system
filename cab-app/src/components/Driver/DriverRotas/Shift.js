@@ -12,7 +12,7 @@ function Shift ({selectedShift, onServiceClick, viewModeClick}) {
       }})
 
   return (
-    <div>This is a shift component, need to add a list of services.
+    <div>
       <div>Date: {selectedShift.date} Starts: {selectedShift.startTime} Location: {selectedShift.startLocation}</div>
       <div>
         {serviceNodes}

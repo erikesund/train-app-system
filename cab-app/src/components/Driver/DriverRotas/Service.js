@@ -8,7 +8,6 @@ function Service ({service}) {
 
   return (
     <div>
-      <p>This is a service component.</p>
       Departure: {service.JsonScheduleV1.schedule_segment.schedule_location[0].departure} From: {service.JsonScheduleV1.schedule_segment.schedule_location[0].tiploc_code}
       {waypointNodes}
     </div>
