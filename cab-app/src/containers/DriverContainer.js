@@ -3,12 +3,16 @@ import DriverOptions from '../components/Driver/DriverOptions';
 import DriverDetails from '../components/Driver/DriverDetails/DriverDetails';
 import Rota from '../components/Driver/DriverRotas/Rota';
 import DriverLogin from '../components/DriverLogin/DriverLogin';
+import Service from '../components/Driver/DriverRotas/Service';
+import Shift from '../components/Driver/DriverRotas/Shift';
 
 function DriverContainer () {
 
   const [driverData, setDriverData] = useState([]);
   const [shiftArray, setShiftArray] = useState([]);
   const [viewMode, setViewMode] = useState("login")
+  const [selectedShift, setSelectedShift] = useState(null)
+  const [selectedService, setSelectedService] = useState(null)
 
   const getData = async () => {
     const response = await fetch("./driver.json")
@@ -40,10 +44,16 @@ function DriverContainer () {
         <DriverOptions shifts={shiftArray} viewModeClick={viewModeClick} viewMode={viewMode}/>
       )}
       {viewMode === "rota" && (
-        <Rota shifts={shiftArray}/>
+        <Rota shifts={shiftArray} viewModeClick={viewModeClick} onShiftClick={setSelectedShift}/>
       )}
       {viewMode === "driver-details" && (
         <DriverDetails driver={driverData}/>
+      )}
+      {viewMode === "shift" && (
+        <Shift selectedShift={selectedShift} viewModeClick={viewModeClick} onServiceClick={setSelectedService}/>
+      )}
+      {viewMode === "service" && (
+        <Service/>
       )}
     </div>
   )
