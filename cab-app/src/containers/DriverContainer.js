@@ -4,6 +4,7 @@ import DriverDetails from '../components/Driver/DriverDetails/DriverDetails';
 import Rota from '../components/Driver/DriverRotas/Rota';
 import DriverLogin from '../components/DriverLogin/DriverLogin';
 import Service from '../components/Driver/DriverRotas/Service';
+import Shift from '../components/Driver/DriverRotas/Shift';
 
 function DriverContainer () {
 
@@ -47,9 +48,9 @@ function DriverContainer () {
       {viewMode === "driver-details" && (
         <DriverDetails driver={driverData}/>
       )}
-      {/* {viewMode === "service" && (
-        <Shift/>
-      )} */}
+      {viewMode === "shift" && (
+        <Shift selectedShift={selectedShift}/>
+      )}
     </div>
   )
 }

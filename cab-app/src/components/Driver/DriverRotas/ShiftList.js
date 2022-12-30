@@ -4,7 +4,7 @@ import Service from "./Service";
 function ShiftList ({shift, onClick, viewModeClick}) {
   function handleShiftClick() {
     onClick(shift)
-    viewModeClick("service")
+    viewModeClick("shift")
   }
 
   return (
