@@ -9,7 +9,7 @@ function Service ({service}) {
   return (
     <div>
       <p>This is the service component.</p>
-      {waypointNodes}
+      {/* {waypointNodes} */}
     </div>
   )
 }
