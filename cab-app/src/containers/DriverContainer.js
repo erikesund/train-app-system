@@ -53,7 +53,7 @@ function DriverContainer () {
         <Shift selectedShift={selectedShift} viewModeClick={viewModeClick} onServiceClick={setSelectedService}/>
       )}
       {viewMode === "service" && (
-        <Service/>
+        <Service service={selectedService}/>
       )}
     </div>
   )
