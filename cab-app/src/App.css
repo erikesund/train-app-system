@@ -3,8 +3,8 @@
 }
 
 div {
-  border: solid white 1px;
+  border: solid rgba(153,153,153) 1px;
   padding: 1rem;
-  background-color: rgba(0,38,100,.86);
-  color: white;
+  background-color: rgba(0,38,100);
+  color: white
 }

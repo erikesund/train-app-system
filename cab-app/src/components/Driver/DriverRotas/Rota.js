@@ -1,6 +1,6 @@
 import React from "react";
 import ShiftList from "./ShiftList";
-
+import "../../../css/DriverRotas/Rota.css"
 function Rota ({shifts, onShiftClick, viewModeClick}) {
 
   const shiftNodes = shifts.map((shift) => {
