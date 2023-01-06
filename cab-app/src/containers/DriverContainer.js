@@ -35,7 +35,7 @@ function DriverContainer () {
 
   return (
     <div>
-      <p>This is the DriverContainer</p>
+      <img src='https://www.scotrail.co.uk/sites/all/themes/scotrail/logo.svg' height="100px"/>
       <button onClick={handleOptionsClick}>Options</button>
       {viewMode === "login" && (
         <DriverLogin viewModeClick={viewModeClick}/>
