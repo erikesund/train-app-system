@@ -18,7 +18,6 @@ function DriverOptions ({shifts, viewModeClick, viewMode}) {
 
   return (
     <div> 
-      <p>This is the driver options component</p>
       {/* <Rota service={service}/> */}
       <button onClick={handleRotaClick}>Rota</button>
       <button onClick={handleNoticeClick}>Notice Board</button>

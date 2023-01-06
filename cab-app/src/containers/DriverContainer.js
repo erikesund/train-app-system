@@ -5,6 +5,7 @@ import Rota from '../components/Driver/DriverRotas/Rota';
 import DriverLogin from '../components/DriverLogin/DriverLogin';
 import Service from '../components/Driver/DriverRotas/Service';
 import Shift from '../components/Driver/DriverRotas/Shift';
+import '../css/DriverContainer.css'
 
 function DriverContainer () {
 
@@ -34,9 +35,9 @@ function DriverContainer () {
   };
 
   return (
-    <div>
-      <p>This is the DriverContainer</p>
-      <button onClick={handleOptionsClick}>Options</button>
+    <div id='main-container'>
+      <img id='scotrail-logo' src='https://www.scotrail.co.uk/sites/all/themes/scotrail/logo.svg' height="100px" onClick={handleOptionsClick}/>
+      {/* <button onClick={handleOptionsClick}>Options</button> */}
       {viewMode === "login" && (
         <DriverLogin viewModeClick={viewModeClick}/>
       )}
