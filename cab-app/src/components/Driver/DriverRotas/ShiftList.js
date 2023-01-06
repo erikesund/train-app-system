@@ -1,5 +1,5 @@
 import React from "react";
-import Service from "./Service";
+import "../../../css/DriverRotas/ShiftList.css"
 
 function ShiftList ({shift, onClick, viewModeClick}) {
   function handleShiftClick() {
@@ -8,7 +8,7 @@ function ShiftList ({shift, onClick, viewModeClick}) {
   }
 
   return (
-    <div onClick={handleShiftClick}>
+    <div id="shift-list-item" onClick={handleShiftClick}>
       Date: {shift.date} Time: {shift.startTime} From: {shift.startLocation}
     </div>
   )
