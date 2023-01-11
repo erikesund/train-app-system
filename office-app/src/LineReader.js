@@ -6,5 +6,6 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (line) => {
-  console.log('Line from file:', line);
+  let parsedLine = JSON.parse(line)
+  console.log('Line from file:', parsedLine);
 });
