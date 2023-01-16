@@ -1,12 +1,10 @@
-// var MongoClient = require("mongodb").MongoClient
 
 var dbName = 'schedule_feed';
-var url = 'mongodb://localhost:27017/';
+// var url = 'mongodb://localhost:27017/';
 var collectionName = 'all_data';
-// var fileName = './toc-full'
+// // var fileName = './toc-full'
 
-
-  new function jsonReader() {
+new function jsonReader() {
     const readline = require('readline');
     const fs = require('fs');
   
@@ -17,30 +15,43 @@ var collectionName = 'all_data';
     rl.on('line', (line) => {
       let parsedLine = JSON.parse(line)
       console.log('Line from file:', parsedLine);
-      dbName.collectionName.insertOne(parsedLine)
+      // dbName.collectionName.insertOne(parsedLine)
     });
   }
 
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://127.0.0.1:27017/";
 
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db(dbName);
+  const readline = require('readline');
+  const fs = require('fs');
 
-// import { MongoClient } from "mongodb";
-// // Replace the uri string with your MongoDB deployment's connection string.
-// const uri = url;
-// const client = new MongoClient(uri);
-// async function run() {
-//   try {
-//     const database = client.db(dbName);
-//     const haiku = database.collection(collectionName);
-//     // create a document to insert
-//     const doc = {
-//       title: "Record of a Shriveled Datum",
-//       content: "No bytes, no problem. Just insert a document, in MongoDB",
-//     }
-//     const result = await haiku.insertOne(doc);
-//     console.log(`A document was inserted with the _id: ${result.insertedId}`);
-//   } finally {
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
+  const rl = readline.createInterface({
+    input: fs.createReadStream('./toc-full')
+  });
+  
+  rl.on('line', (line) => {
+    let parsedLine = JSON.parse(line)
+    // console.log('Line from file:', parsedLine);
+    // dbName.collectionName.insertOne(parsedLine)
+    dbo.collection(collectionName).insertOne(parsedLine, function(err, res) {
+      if (err) throw err;
+  });
+  console.log("Documents inserted");
+  // db.close();
+});
+});
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db(dbName);
+//   var myobj = { name: "Company Inc", address: "Highway 37" };
+//   dbo.collection(collectionName).insertOne(myobj, function(err, res) {
+//     if (err) throw err;
+//     console.log("Documents inserted");
+//     db.close();
+//   });
+// });
 
