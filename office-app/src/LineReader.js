@@ -6,8 +6,8 @@ var collectionName = 'all_data';
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  // db.dropDataBase();
   var dbo = db.db(dbName);
+  // db.dropDataBase(); does not work, dropping manually for now
   const readline = require('readline');
   const fs = require('fs');
 
