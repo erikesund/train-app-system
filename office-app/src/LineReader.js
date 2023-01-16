@@ -6,6 +6,7 @@ var collectionName = 'all_data';
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
+  // db.dropDataBase();
   var dbo = db.db(dbName);
   const readline = require('readline');
   const fs = require('fs');
@@ -16,10 +17,24 @@ MongoClient.connect(url, function(err, db) {
   
   rl.on('line', (line) => {
     let parsedLine = JSON.parse(line)
-    dbo.collection(collectionName).insertOne(parsedLine, function(err, res) {
-      if (err) throw err;
-  });
-  // db.close();
+    if (parsedLine.hasOwnProperty("JsonAssociationV1")) {
+      dbo.collection("associations").insertOne(parsedLine, function(err, res) {
+        if (err) throw err;
+        // db.close();
+    });
+    } else if (parsedLine.hasOwnProperty("TiplocV1")) {
+      dbo.collection("tiplocs").insertOne(parsedLine, function(err, res) {
+        if (err) throw err;
+        // db.close();
+    });
+    } else if (parsedLine.hasOwnProperty("JsonScheduleV1")) {
+      dbo.collection("schedules").insertOne(parsedLine, function(err, res) {
+        if (err) throw err;
+        // db.close();
+    });
+    }
+    //add dbclose on eof true here.
+
 });
 });
 
