@@ -32,8 +32,12 @@ MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         // db.close();
     });
-    }
-    //add dbclose on eof true here.
+  }
+  //add dbclose on eof true here.
+  //  else if (parsedLine.hasOwnProperty("EOF")) {
+  //   dbo.close();
+  // } 
+  // doesn't work
 
 });
 });
