@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
+import OfficeContainer from './containers/OfficeContainer';
 
 function App() {
   return (
     <div className="App">
-      App
+      <OfficeContainer/>
     </div>
   );
 }
