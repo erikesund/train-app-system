@@ -1,8 +1,13 @@
 import React from "react";
 
 function OfficeMenu () {
+
   return (
-    <div>Office Menu</div>
+    <div> 
+      <button>Drivers</button>
+      <button>Notice Board</button>
+      <button>Annual Leave</button>
+  </div>
   )
 }
 
