@@ -1,20 +1,9 @@
 import React, {useState} from "react";
 import OfficeMenu from "../components/OfficeMenu";
-const {connectToDb, getDb} = require("../db/db")
+// const {connectToDb, getDb} = require("../db/db")
 
 function OfficeContainer () {
   const [viewMode, setViewMode] = useState("menu");
-
-  let db;
-
-  connectToDb((err) => {
-    if(!err) {
-      app.listen(3000, () => {
-        console.log("app listening on port 3000")
-      })
-      db = getDb()
-    }
-  })
 
   return (
     <div id="main-container">
