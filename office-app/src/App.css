@@ -1,3 +1,10 @@
 .App {
   text-align: center;
+  height: 100vh;
+}
+
+div {
+  border: solid rgba(153,153,153) 1px;
+  background-color: rgba(0,38,100);
+  color: white
 }
