@@ -5,6 +5,7 @@ function NewDriverForm ({addDriver}) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    driverNumber: "",
     tocName: "",
     tocCode: "",
   })
@@ -23,6 +24,7 @@ function NewDriverForm ({addDriver}) {
     setFormData({
       firstName: "",
       lastName: "",
+      driverNumber: "",
       tocName: "",
       tocCode: "",
     })
@@ -44,6 +46,13 @@ function NewDriverForm ({addDriver}) {
         id="lastName"
         name="lastName"
         value={formData.lastName}/><br/>
+      <label htmlFor="driverNumber">Driver Number: </label>
+      <input 
+        onChange={onChange} 
+        type="text" 
+        id="driverNumber"
+        name="driverNumber"
+        value={formData.driverNumber}/><br/>
       <label htmlFor="tocName">TOC Name: </label>
       <input
         onChange={onChange}
