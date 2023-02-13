@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { postDriver } from "./DriversService";
 
-function NewDriverForm () {
+function NewDriverForm ({addDriver}) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -29,28 +30,28 @@ function NewDriverForm () {
 
   return (
     <form onSubmit={onSubmit}>
-      <label htmlFor="firstName">First Name:</label>
+      <label htmlFor="firstName">First Name: </label>
       <input 
         onChange={onChange}
         type="text"
         id="firstName"
         name="firstName"
         value={formData.firstName}/> <br/>  
-      <label htmlFor="lastName">Surname:</label>
+      <label htmlFor="lastName">Surname: </label>
       <input 
         onChange={onChange} 
         type="text" 
         id="lastName"
         name="lastName"
         value={formData.lastName}/><br/>
-      <label htmlFor="tocName">TOC Name:</label>
+      <label htmlFor="tocName">TOC Name: </label>
       <input
         onChange={onChange}
         type="text"
         id="tocName"
         name="tocName"
         value={formData.tocName}/><br/>
-      <label htmlFor="tocCode">TOC Code:</label>
+      <label htmlFor="tocCode">TOC Code: </label>
       <input
         onChange={onChange}
         type="text"

@@ -12,7 +12,7 @@ function DriversContainer () {
   }, [])
 
   const addDriver = (driver) => {
-    const temp = driversList.map(s => s);
+    const temp = driversList.map(d => d);
     temp.push(driver);
     setDriversList(temp);
   };
