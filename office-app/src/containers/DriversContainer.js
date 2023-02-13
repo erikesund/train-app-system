@@ -1,7 +1,7 @@
 import React from "react";
-import NewDriverForm from "./NewDriverForm";
+import NewDriverForm from "../components/drivers/NewDriverForm";
 
-function DriversMain () {
+function DriversContainer () {
   return (
     <div>
       <h2>Drivers Main Menu</h2>
@@ -11,4 +11,4 @@ function DriversMain () {
   )
 };
 
-export default DriversMain
+export default DriversContainer;

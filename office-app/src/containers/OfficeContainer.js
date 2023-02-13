@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import DriversMain from "../components/drivers/DriversMain";
+import DriversMain from "./DriversContainer";
 import OfficeMenu from "../components/OfficeMenu";
+import DriversContainer from "./DriversContainer";
 // const {connectToDb, getDb} = require("../db/db")
 
 function OfficeContainer () {
@@ -16,7 +17,7 @@ function OfficeContainer () {
       <hr/>
       {viewMode === "menu" && (
       <OfficeMenu/>)}
-      <DriversMain/>
+      <DriversContainer/>
     </div>
   )
 }
