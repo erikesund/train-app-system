@@ -3,7 +3,6 @@ const express = require("express");
 const createRouter = function(collection) {
   const router = express.Router()
 
-  //get all
   router.get("/", (req, res) => {
     collection
       .find()
