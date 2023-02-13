@@ -12,7 +12,7 @@ function OfficeContainer () {
 
   return (
     <div id="main-container">
-      <img id='scotrail-logo' src='https://www.scotrail.co.uk/sites/all/themes/scotrail/logo.svg' height="100px"/>
+      <img id='scotrail-logo' src='https://www.scotrail.co.uk/sites/all/themes/scotrail/logo.svg' alt="ScotRail Logo" height="100px"/>
       <hr/>
       {viewMode === "menu" && (
       <OfficeMenu/>)}

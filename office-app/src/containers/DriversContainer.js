@@ -18,12 +18,20 @@ function DriversContainer () {
     setDrivers(temp);
   };
 
+  const removeDriver = (id) => {
+    const temp = drivers.map(d => d);
+    const indexToDel = temp.map(d => d._id).indexOf(id);
+    console.log(indexToDel)
+    temp.splice(indexToDel, 1);
+    setDrivers(temp);
+  }
+
   return (
     <div>
       <h2>Drivers Main Menu</h2>
       <button>Add New</button>
       <NewDriverForm addDriver={addDriver}/>
-      <DriversList drivers={drivers}/>
+      <DriversList drivers={drivers} removeDriver={removeDriver}/>
     </div>
   )
 };

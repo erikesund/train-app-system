@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:9000/drivers"
+const baseURL = "http://localhost:9000/drivers/"
 
 export const getDrivers = () => {
   return fetch(baseURL)
@@ -16,6 +16,6 @@ export const postDriver = (payload) => {
 
 export const deleteDriver = (id) => {
   return fetch(baseURL + id, {
-      method: 'DELETE'
-  })
+      method: "DELETE"
+  });
 };

@@ -1,12 +1,10 @@
 import React from "react";
+import DriverCard from "./DriverCard";
 
-function DriversList ({drivers}) {
+function DriversList ({drivers, removeDriver}) {
   const driverNodes = drivers.map((driver) => {
-    return (
-      <div>{driver.firstName} {driver.lastName}</div>
-    )
+    return <DriverCard driver={driver} key={driver._id} removeDriver={removeDriver}/>
   })
-
 
   return ( 
   <div>
