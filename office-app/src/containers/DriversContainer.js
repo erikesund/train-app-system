@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NewDriverForm from "../components/drivers/NewDriverForm";
-import {getDrivers} from "../components/drivers/DriversService"
+import {getDrivers} from "../services/DriversService"
 import DriversList from "../components/drivers/DriversList";
 
 function DriversContainer () {
