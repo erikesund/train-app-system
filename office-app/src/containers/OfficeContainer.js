@@ -1,9 +1,14 @@
 import React, {useState} from "react";
+import DriversMain from "../components/drivers/DriversMain";
 import OfficeMenu from "../components/OfficeMenu";
 // const {connectToDb, getDb} = require("../db/db")
 
 function OfficeContainer () {
   const [viewMode, setViewMode] = useState("menu");
+
+  const viewModeClick = string => {
+    setViewMode(string);
+  }
 
   return (
     <div id="main-container">
@@ -11,6 +16,7 @@ function OfficeContainer () {
       <hr/>
       {viewMode === "menu" && (
       <OfficeMenu/>)}
+      <DriversMain/>
     </div>
   )
 }
