@@ -9,7 +9,7 @@ function OfficeContainer () {
 
   const viewModeClick = string => {
     setViewMode(string);
-  }
+  };
 
   return (
     <div id="main-container">
@@ -22,6 +22,6 @@ function OfficeContainer () {
       <SchedulesContainer/>)}
     </div>
   )
-}
+};
 
 export default OfficeContainer;
