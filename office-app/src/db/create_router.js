@@ -25,7 +25,7 @@ const createRouter = function(collection) {
 
     // let origins = []
     collection
-      .find()
+      .find({"JsonScheduleV1.CIF_stp_indicator": "P"})
       .toArray()
       .then((docs) => res.json(docs))
       .catch((err) => {

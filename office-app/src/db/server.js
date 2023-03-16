@@ -6,7 +6,7 @@ app.use(express.json());
 const MongoClient = require("mongodb").MongoClient;
 const createRouter = require("./create_router")
 
-MongoClient.connect('mongodb://127.0.0.1:27017')
+MongoClient.connect("mongodb://127.0.0.1:27017")
   .then((client) => {
     const db = client.db("schedule_feed")
     const tiplocsCollection = db.collection("tiplocs")
@@ -17,6 +17,14 @@ MongoClient.connect('mongodb://127.0.0.1:27017')
     const associationsRouter = createRouter(associationsCollection)
     const schedulesRouter = createRouter(schedulesCollection)
     const driversRouter = createRouter(driversCollection)
+
+    const query = {"JsonScheduleV1.CIF_stp_indicator": "P"};
+    schedulesCollection.find(query).toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      // db.close(); this crashed nodemon
+    });
+
 
     app.use("/tiplocs", tiplocsRouter)
     app.use("/associations", associationsRouter)
