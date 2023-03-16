@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 var ObjectId = require('mongodb').ObjectId;
 
@@ -7,6 +8,24 @@ const createRouter = function(collection) {
   router.get("/", (req, res) => {
     collection
       .find()
+      .toArray()
+      .then((docs) => res.json(docs))
+      .catch((err) => {
+        console.error(err);
+        res.status(500);
+        res.json({status: 500, error: err})
+      })
+  })
+
+  router.get("/schedules/origins", (req, res) => {
+    // collection("schedules").find({}).toArray((err, result) => {
+    //   if(err) throw (err)
+    //   response.send(result)
+    // })
+
+    // let origins = []
+    collection
+      .find({"JsonScheduleV1.CIF_stp_indicator": "P"})
       .toArray()
       .then((docs) => res.json(docs))
       .catch((err) => {
