@@ -9,7 +9,7 @@ function DriverCard ({driver, removeDriver}) {
   };
 
   return (
-    <div>{driver.firstName} {driver.lastName} <button onClick={handleDelete}>Delete</button></div>
+    <div>{driver.driverNumber} {driver.lastName}, {driver.firstName} - {driver.tocName} <button onClick={handleDelete}>Delete</button></div>
   )
 };
 

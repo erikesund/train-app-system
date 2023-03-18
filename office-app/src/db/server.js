@@ -24,7 +24,27 @@ MongoClient.connect("mongodb://127.0.0.1:27017")
       console.log(result);
       // db.close(); this crashed nodemon
     });
+    
+      //maybe need to require mongodb? this needs work
+      // path = schedule.JsonScheduleV1.schedule_location[0].tiploc_code
 
+      // let origins = [] 
+      // const query = {"JsonScheduleV1.CIF_stp_indicator": "P"};
+      // schedulesCollection.find(query).toArray(function(err, permenantSchedulesArray) {
+      //   if (err) throw err;
+      //   console.log(permenantSchedulesArray);
+      //   console.log(permenantSchedulesArray.JsonScheduleV1.schedule_location)
+      //   origins = permenantSchedulesArray.filter(schedule => {
+      //     // console.log(schedule.JsonScheduleV1.schedule_location)
+      //     const isDuplicate = origins.includes(schedule.JsonScheduleV1.schedule_location)
+      //     if (!isDuplicate) {
+      //       origins.push(schedule.JsonScheduleV1.schedule_location)
+      //     }
+      //   })
+      //   console.log(origins)
+      //   // db.close(); this crashed nodemon
+      // });
+    
 
     app.use("/tiplocs", tiplocsRouter)
     app.use("/associations", associationsRouter)
