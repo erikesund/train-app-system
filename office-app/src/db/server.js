@@ -19,30 +19,44 @@ MongoClient.connect("mongodb://127.0.0.1:27017")
     const driversRouter = createRouter(driversCollection)
 
     const query = {"JsonScheduleV1.CIF_stp_indicator": "P"};
+    let filteredOrigins = []
     schedulesCollection.find(query).toArray(function(err, result) {
       if (err) throw err;
-      console.log(result);
+      var permSchedules = result;
+
+      // console.log(permSchedules) //permSchedules appears and can be console logged.
+      // console.log(permSchedules[1000].JsonScheduleV1.schedule_segment)
+ 
+      filteredOrigins = permSchedules.filter(schedule => {
+        // console.log(schedule.JsonScheduleV1.schedule_segment.schedule_location[0].tiploc_code)
+        const isDuplicate = filteredOrigins.includes(schedule.JsonScheduleV1.schedule_segment.schedule_location[0].tiploc_code)
+        if (!isDuplicate) {
+          filteredOrigins.push(schedule.JsonScheduleV1.schedule_segment.schedule_location[0].tiploc_code)
+          console.log(filteredOrigins)
+        }
+      })
       // db.close(); this crashed nodemon
     });
+    
     
       //maybe need to require mongodb? this needs work
       // path = schedule.JsonScheduleV1.schedule_location[0].tiploc_code
 
-      // let origins = [] 
+      // let permSchedules = [] 
       // const query = {"JsonScheduleV1.CIF_stp_indicator": "P"};
       // schedulesCollection.find(query).toArray(function(err, permenantSchedulesArray) {
       //   if (err) throw err;
       //   console.log(permenantSchedulesArray);
       //   console.log(permenantSchedulesArray.JsonScheduleV1.schedule_location)
-      //   origins = permenantSchedulesArray.filter(schedule => {
+      //   permSchedules = permenantSchedulesArray.filter(schedule => {
       //     // console.log(schedule.JsonScheduleV1.schedule_location)
-      //     const isDuplicate = origins.includes(schedule.JsonScheduleV1.schedule_location)
+      //     const isDuplicate = permSchedules.includes(schedule.JsonScheduleV1.schedule_location)
       //     if (!isDuplicate) {
-      //       origins.push(schedule.JsonScheduleV1.schedule_location)
+      //       permSchedules.push(schedule.JsonScheduleV1.schedule_location)
       //     }
       //   })
-      //   console.log(origins)
-      //   // db.close(); this crashed nodemon
+      //   console.log(permSchedules)
+        // db.close(); this crashed nodemon
       // });
     
 
@@ -50,8 +64,12 @@ MongoClient.connect("mongodb://127.0.0.1:27017")
     app.use("/associations", associationsRouter)
     app.use("/schedules", schedulesRouter)
     app.use("/drivers", driversRouter)
+    
   })
 
   app.listen(9000, function() {
     console.log("App running on port 9000")
   })
+
+
+  

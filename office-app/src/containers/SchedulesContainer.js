@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { getDrivers } from "../services/DriversService";
-import { getTiplocs } from "../services/TiplocsService";
+// import { getTiplocs } from "../services/TiplocsService";
+import {getPermSchedulesOrigin } from "../services/SchedulesService";
+
 
 // const { MongoClient } = require("mongodb");
 // // Replace the uri string with your MongoDB deployment's connection string.
